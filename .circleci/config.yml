@@ -18,8 +18,8 @@ jobs:
     steps:
       - checkout
       - run:
-        name: update-npm
-        command: 'sudo npm install -g npm@5'
+          name: update-npm
+          command: 'sudo npm install -g npm@5'
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }
       - run:
@@ -28,4 +28,4 @@ jobs:
       - save_cache:
           key: depdency-cache-{{ cchecksum "package-lock.json "}}
           paths:
-           - ./node_modules
+            - ./node_modules
